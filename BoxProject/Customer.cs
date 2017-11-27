@@ -9,5 +9,6 @@ namespace BoxProject
     class Customer
     {
         private int i = 10;
+        //şeyma's changing
     }
 }
