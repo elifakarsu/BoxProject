@@ -8,5 +8,6 @@ namespace BoxProject
 {
     class Customer
     {
+        private int i = 10;
     }
 }
