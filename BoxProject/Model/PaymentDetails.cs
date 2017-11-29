@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Globalization.DateTimeFormatting;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 
 namespace BoxProject.Model
 {
@@ -11,6 +15,8 @@ namespace BoxProject.Model
         private string _cardNumber;
         private string _cardName;
         private string _expiryDate;
+        private int _expirymonth;
+        private int _expiryyear;
         private string _securityNumber;
 
         public string CardNumber
@@ -31,6 +37,18 @@ namespace BoxProject.Model
             set => _expiryDate = value;
         }
 
+        public int ExpiryMonth
+        {
+            get => _expirymonth;
+            set => _expirymonth = value;
+        }
+
+        public int ExpiryYear
+        {
+            get => _expiryyear;
+            set => _expiryyear = value;
+        }
+
         public string SecurityNumber
         {
             get => _securityNumber;
@@ -45,9 +63,34 @@ namespace BoxProject.Model
             _securityNumber = securityNumber;
             
         }
+
+        public bool startswith(string tocheck)
+        {
+            var numbers = new []{"300", "301", "302", "303", "304", "305"};
+            return !string.IsNullOrEmpty(tocheck) && numbers.Any(number => tocheck.StartsWith(number));
+        }
+
         public PaymentDetails()
         {
+
+            if (startswith(CardNumber))
+            {
+                
+            }
+
+            if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
+            {
+                //Confirmed 
+            }
+
+
             
+            int currentmonth = DateTime.Now.Month;
+            int currentyear = DateTime.Now.Year;
+            if (currentmonth > ExpiryMonth && ExpiryYear > currentyear)
+            {
+                // denied 
+            }
         }
 
     }
