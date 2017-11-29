@@ -45,7 +45,6 @@ namespace BoxProject.Model
             _securityNumber = securityNumber;
             
         }
-
         public PaymentDetails()
         {
             
