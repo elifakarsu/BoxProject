@@ -15,6 +15,8 @@ namespace BoxProject.Model
         private string _cardNumber;
         private string _cardName;
         private string _expiryDate;
+        private int _expirymonth;
+        private int _expiryyear;
         private string _securityNumber;
 
         public string CardNumber
@@ -33,6 +35,18 @@ namespace BoxProject.Model
         {
             get => _expiryDate;
             set => _expiryDate = value;
+        }
+
+        public int ExpiryMonth
+        {
+            get => _expirymonth;
+            set => _expirymonth = value;
+        }
+
+        public int ExpiryYear
+        {
+            get => _expiryyear;
+            set => _expiryyear = value;
         }
 
         public string SecurityNumber
@@ -60,6 +74,7 @@ namespace BoxProject.Model
 
         public PaymentDetails()
         {
+
             if (startswith(CardNumber))
             {
                 
@@ -70,9 +85,14 @@ namespace BoxProject.Model
                 //Confirmed 
             }
 
-           
-            DateTime.Now.ToString("MM/yyyy");
 
+            
+            int currentmonth = DateTime.Now.Month;
+            int currentyear = DateTime.Now.Year;
+            if (currentmonth > ExpiryMonth && ExpiryYear > currentyear)
+            {
+                // denied 
+            }
         }
 
     }
