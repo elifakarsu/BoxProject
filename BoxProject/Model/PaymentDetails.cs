@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Globalization.DateTimeFormatting;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 
 namespace BoxProject.Model
 {
@@ -46,9 +50,29 @@ namespace BoxProject.Model
             
         }
 
+        public bool startswith(string tocheck)
+        {
+            var numbers = new []{"300", "301", "302", "303", "304", "305"};
+            return !string.IsNullOrEmpty(tocheck) && numbers.Any(number => tocheck.StartsWith(number));
+        }
+        
+            
+
         public PaymentDetails()
         {
-            
+            if (startswith(CardNumber))
+            {
+                
+            }
+
+            if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
+            {
+                //Confirmed 
+            }
+
+           
+            DateTime.Now.ToString("MM/yyyy");
+
         }
 
     }
