@@ -33,7 +33,5 @@ namespace BoxProject.Model
         {
             _myItems = items;
         }
-
-       
     }
 }
