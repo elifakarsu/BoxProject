@@ -8,14 +8,27 @@ namespace BoxProject.Model
 {
     class Item
     {
-        
-        private string _name;
-       
 
-        public string ItemId
+        private string _itemID;
+        private string _category;
+        private string _name;
+        private string _brand;
+        private bool _expensive;
+        private bool _average;
+        private bool _affordable;
+
+
+        public string ItemID
         {
-            get => _itemId;
-            set => _itemId = value;
+            get => _itemID;
+            set => _itemID = value;
+        }
+
+
+        public string Category
+        {
+            get => _category;
+            set => _category = value;
         }
 
         public string Name
@@ -24,22 +37,47 @@ namespace BoxProject.Model
             set => _name = value;
         }
 
-        
 
-        public Item(string itemId, string name, string brand, bool expensive,bool average, bool affordable)
+        public string Brand
         {
-            
-            _name = name;
-            _brand = brand;
-            _expensive = expensive;
-            _average = average;
-            _affordable = affordable;
-            
+            get => _brand;
+            set => _brand = value;
         }
+
+        public bool Expensive
+        {
+            get => _expensive;
+            set => _expensive = value;
+        }
+
+        public bool Average
+        {
+            get => _average;
+            set => _average = value;
+        }
+
+        public bool Affordable
+        {
+            get => _affordable;
+            set => _affordable = value;
+        }
+
+        public Item(string itemId, string category, string name, string brand, bool expensive, bool average, bool affordable)
+        {
+            ItemID = itemId;
+            Category = category;
+            Name = name;
+            Brand = brand;
+            Expensive = expensive;
+            Average = average;
+            Affordable = affordable;
+
+        }
+
 
         public Item()
         {
-            
+
         }
     }
 }

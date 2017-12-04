@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,38 +9,33 @@ namespace BoxProject.Model
 {
     class ItemCatalog
     {
-        private string _itemID;
-        private Item _item;
-        private string _brand;
-        private bool _expensive;
-        private bool _average;
-        private bool _affordable;
-        
+        //private Item _item;
+        private ObservableCollection<Item> _myItems;
 
-        public string ItemID
+        //public Item Item
+        //{
+        //    get => _item;
+        //    set => _item = value;
+        //}
+
+        public ObservableCollection<Item> MyItems
         {
-            get => _itemID;
-            set => _itemID = value;
+            get => _myItems;
+            set => _myItems = value;
         }
 
-        public Item Item
+        public ItemCatalog()
         {
-            get => _item;
-            set => _item = value; 
+
         }
 
-
-        public string Brand
+        public ItemCatalog(ObservableCollection<Item> items)
         {
-            get => _brand;
-            set => _brand = value;
+            _myItems = items;
         }
 
-        public bool Expensive
+        public override string ToString()
         {
-            get => _expensive;
-            set => _expensive = value;
-        }
 
         public bool Average
         {
@@ -47,11 +43,8 @@ namespace BoxProject.Model
             set => _average = value;
         }
 
-        public bool Affordable
-        {
-            get => _affordable;
-            set => _affordable = value;
+            return "0";
         }
-        
+
     }
 }
