@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Box.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemCatalog.cs" />
