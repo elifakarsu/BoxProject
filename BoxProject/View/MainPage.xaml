@@ -2,24 +2,34 @@
     x:Class="BoxProject.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:BoxProject"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Left" Height="835" Margin="756,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="988" FontSize="50">
-            <Run/>
-            <LineBreak/>
-            <Run Text="INFORMATION REGARDING                    "/>
-        </TextBlock>
-        <ListView HorizontalAlignment="Left" Height="660" Margin="108,198,0,0" VerticalAlignment="Top" Width="501"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="95" Margin="108,74,0,0" VerticalAlignment="Top" Width="257"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="91" Margin="108,892.917,0,0" VerticalAlignment="Top" Width="256.987" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
-            <Button.RenderTransform>
-                <CompositeTransform Rotation="0.095"/>
-            </Button.RenderTransform>
-        </Button>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        
+        
+
+
+        
+
+        <Button Content="Brand Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="179"/>
     </Grid>
 </Page>

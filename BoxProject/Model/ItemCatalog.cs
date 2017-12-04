@@ -12,6 +12,8 @@ namespace BoxProject.Model
         private Item _item;
         private string _brand;
         private bool _expensive;
+        private bool _average;
+        private bool _affordable;
         
 
         public string ItemID
