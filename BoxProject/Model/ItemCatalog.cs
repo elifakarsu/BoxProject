@@ -34,17 +34,6 @@ namespace BoxProject.Model
             _myItems = items;
         }
 
-        public override string ToString()
-        {
-
-        public bool Average
-        {
-            get => _average;
-            set => _average = value;
-        }
-
-            return "0";
-        }
-
+       
     }
 }
