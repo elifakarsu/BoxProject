@@ -9,9 +9,16 @@ namespace BoxProject.Model
 {
     class Box
     {
+        private string _image;
         private string _name;
-        private List<string> _categoryList;
+        private string _description;
         private double _price;
+
+        public string Image
+        {
+            get => _image;
+            set => _image = value;
+        }
 
         public string Name
         {
@@ -19,10 +26,10 @@ namespace BoxProject.Model
             set => _name = value;
         }
 
-        public List<string> CategoryList
+        public string Description
         {
-            get => _categoryList;
-            set => _categoryList = value;
+            get => _description;
+            set => _description = value;
         }
 
         public double Price
@@ -30,27 +37,22 @@ namespace BoxProject.Model
             get => _price;
             set => _price = value;
         }
+        
 
-        public Box(string name, List<string> categoryList, double price)
+        public Box(string image, string name, string description, double price)
         {
-            AddItemToCategory();
+            _image = image;
             _name = name;
-            _categoryList = categoryList;
+            _description = description;
             _price = price;
             
         }
 
         public Box()
         {
-            
+
         }
 
-        public void AddItemToCategory()
-        {
-            _categoryList.Add("Beauty");
-            _categoryList.Add("Health");
-            _categoryList.Add("Games");
-            _categoryList.Add("Eras");
-        }
+       
     }
 }

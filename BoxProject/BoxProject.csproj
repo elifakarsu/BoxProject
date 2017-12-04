@@ -101,6 +101,7 @@
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemCatalog.cs" />
     <Compile Include="Model\PaymentDetails.cs" />
+    <Compile Include="Model\Serialization.cs" />
     <Compile Include="Model\Singleton.cs" />
     <Compile Include="ViewModel\BoxVM.cs" />
     <Compile Include="View\BoxPage.xaml.cs">

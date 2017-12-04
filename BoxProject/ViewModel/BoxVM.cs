@@ -10,9 +10,11 @@ namespace BoxProject.ViewModel
 {
     class BoxVM
     {
-
+        public ItemCatalog _myItems { get; set; }
+        private Serialization _Serialize;
         private Box _myBox;
         private ObservableCollection<Category> _categories;
+        private ObservableCollection<Item> _myItemCollection;
         private Category _selectedCategory;
 
 
@@ -28,8 +30,18 @@ namespace BoxProject.ViewModel
             set =>  _selectedCategory = value;
         }
 
+        public ObservableCollection<Item> MyItemCollection
+        {
+            get => _myItemCollection;
+            set => _myItemCollection = value;
+        }
+
         public BoxVM()
         {
+            _myItems = new ItemCatalog();
+
+            _Serialize = new Serialization();
+
             _myBox = new Box();
 
             SelectedCategory = new Category();
@@ -42,6 +54,10 @@ namespace BoxProject.ViewModel
                 new Category("Game")
 
             };
+
+            ReadMyItems();
+
+
         }
 
         public void CreateBoxes()
@@ -50,6 +66,11 @@ namespace BoxProject.ViewModel
 
             if (SelectedCategory.Name == "Make up")
             {
+                foreach (var item in MyItemCollection)
+                {
+                    
+
+                }
                 
             }
             else if (SelectedCategory.Name == "Health")
@@ -64,11 +85,15 @@ namespace BoxProject.ViewModel
             {
 
             }
-
-
-
+            
         }
 
+        public async void ReadMyItems()
+        {
+            MyItemCollection  = await _Serialize.LoadFromJson();
+            _myItems.MyItems = MyItemCollection;
+        }
+        
 
 
     }
