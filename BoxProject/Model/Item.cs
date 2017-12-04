@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoxProject.Model
 {
-    class Item
+    public class Item
     {
 
         private string _itemID;

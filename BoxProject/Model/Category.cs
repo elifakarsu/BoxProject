@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoxProject.Model
 {
-    class Category
+    public class Category
     {
         private string _name;
 
