@@ -7,44 +7,56 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width ="0.75*" ></ColumnDefinition>
-            <ColumnDefinition Width ="1*" ></ColumnDefinition>
-            <ColumnDefinition Width ="2*" ></ColumnDefinition>
+        <Image Grid.Row="3" Grid.RowSpan="4" />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="2"  />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="4"  />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="6"  />
+        <Button Grid.Column="2" Grid.RowSpan="2" Grid.Row="4" Height="95" Width="500" />
+        <Image Grid.Row="9" Grid.RowSpan="4"/>
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="8"  />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="10"  />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="12"  />
+        <Button Grid.Column="2" Grid.RowSpan="2" Grid.Row="10" Height="95" Width="500" />
+        <Image Grid.Row="15" Grid.RowSpan="4"/>
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="14"  />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="16"  />
+        <TextBox Grid.Column="1"  Grid.RowSpan="2" Grid.Row="18"  />
+        <Button Grid.Column="2" Grid.RowSpan="2" Grid.Row="16" Height="95" Width="500" />
+
+
+
+
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-
-        <ListView Grid.Row="0" Grid.Column="0" Grid.RowSpan="16" ></ListView>
-        <StackPanel Grid.Row ="0" Grid.Column ="1" Grid.RowSpan="6"  ></StackPanel>
-        <StackPanel Grid.Row ="0" Grid.Column ="2" Grid.RowSpan ="6" >
-        <TextBlock ></TextBlock>
-        <TextBlock ></TextBlock>
-        <TextBlock ></TextBlock>
-        </StackPanel>
-        <StackPanel Grid.Row ="6" Grid.Column ="1" Grid.RowSpan="5" ></StackPanel>
-        <StackPanel Grid.Row ="6" Grid.Column ="2" Grid.RowSpan="5" ></StackPanel>
-        <StackPanel Grid.Row ="11" Grid.Column ="1" Grid.RowSpan="5" ></StackPanel>
-        <StackPanel Grid.Row ="11" Grid.Column ="2" Grid.RowSpan="5" ></StackPanel>
 
     </Grid>
 </Page>
