@@ -5,83 +5,77 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Globalization.DateTimeFormatting;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
 
 namespace BoxProject.Model
 {
-    class PaymentDetails
+   public class PaymentDetails
     {
-        private string _cardNumber;
-        private string _cardName;
-        private string _expiryDate;
-        private int _expirymonth;
-        private int _expiryyear;
-        private string _securityNumber;
+        public string CardNumber { get; set; }
 
-        public string CardNumber
-        {
-            get => _cardNumber;
-            set => _cardNumber = value;
-        }
+        public string CardName { get; set; }
 
-        public string CardName
-        {
-            get => _cardName;
-            set => _cardName = value;
-        }
+        public string ExpiryDate { get; set; }
 
-        public string ExpiryDate
-        {
-            get => _expiryDate;
-            set => _expiryDate = value;
-        }
+        public int ExpiryMonth { get; set; }
 
-        public int ExpiryMonth
-        {
-            get => _expirymonth;
-            set => _expirymonth = value;
-        }
+        public int ExpiryYear { get; set; }
 
-        public int ExpiryYear
-        {
-            get => _expiryyear;
-            set => _expiryyear = value;
-        }
+        public string SecurityNumber { get; set; }
 
-        public string SecurityNumber
-        {
-            get => _securityNumber;
-            set => _securityNumber = value;
-        }
+       
 
         public PaymentDetails(string cardNumber, string cardName,string expiryDate, string securityNumber)
         {
-            _cardNumber = cardNumber;
-            _cardName = cardName;
-            _expiryDate = expiryDate;
-            _securityNumber = securityNumber;
+            CardNumber = cardNumber;
+            CardName = cardName;
+            ExpiryDate = expiryDate;
+            SecurityNumber = securityNumber;
             
         }
+        
 
-        public bool startswith(string tocheck)
+        public async void PaymentDetailCard()
         {
-            var numbers = new []{"300", "301", "302", "303", "304", "305"};
-            return !string.IsNullOrEmpty(tocheck) && numbers.Any(number => tocheck.StartsWith(number));
-        }
+          
+                if (CardNumber == "300" || CardNumber == "301" || CardNumber == "302" || CardNumber == "303" || CardNumber == "304" || CardNumber == "305")
+                {
+                   ShowDialogBox("Diners Club - Carte Blanche");
+                }
+                else if (CardNumber == "34" || CardNumber == "37")
+                {
+                    ShowDialogBox("American Express");
+                }
+                else if (CardNumber == "36")
+                {
+                    ShowDialogBox("Diners Club - International");
+                }
+                else if (CardNumber == "54")
+                {
+                    ShowDialogBox("Diners Club - USA & Canada");
+                }
+                else if (CardNumber == "6011" || CardNumber == "  " || CardNumber == "644" || CardNumber == "645" || CardNumber == "646" || CardNumber == "647" || CardNumber == "648" || CardNumber == "649" || CardNumber == "65")
+                {
+                    ShowDialogBox("Discover");
+                }
+                else if (CardNumber == "637" || CardNumber == "638" || CardNumber == "639")
+                {
+                    ShowDialogBox("InstaPayment");
+                }
+                else if ()
+                {
+                    ShowDialogBox("JCB");
+                }
+            
 
-        public PaymentDetails()
-        {
 
-            if (startswith(CardNumber))
-            {
-                
-            }
-
-            if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
-            {
-                //Confirmed 
-            }
+           
+           //if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
+           // {
+           //     MsgBox("Payment Accepted");
+           // }
 
 
             
@@ -89,8 +83,14 @@ namespace BoxProject.Model
             int currentyear = DateTime.Now.Year;
             if (currentmonth > ExpiryMonth && ExpiryYear > currentyear)
             {
-                // denied 
+                MsgBox("Sorry. Card is invalid");
             }
+        }
+
+        public static  async  void ShowDialogBox(string message)
+        {
+            var msg = new MessageDialog(message);
+            await msg.ShowAsync();
         }
 
     }
