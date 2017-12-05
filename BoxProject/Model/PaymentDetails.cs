@@ -10,63 +10,34 @@ using Windows.UI.Xaml.Controls.Maps;
 
 namespace BoxProject.Model
 {
-    class PaymentDetails
+   public class PaymentDetails
     {
-        private string _cardNumber;
-        private string _cardName;
-        private string _expiryDate;
-        private int _expirymonth;
-        private int _expiryyear;
-        private string _securityNumber;
+        public string CardNumber { get; set; }
 
-        public string CardNumber
-        {
-            get => _cardNumber;
-            set => _cardNumber = value;
-        }
+        public string CardName { get; set; }
 
-        public string CardName
-        {
-            get => _cardName;
-            set => _cardName = value;
-        }
+        public string ExpiryDate { get; set; }
 
-        public string ExpiryDate
-        {
-            get => _expiryDate;
-            set => _expiryDate = value;
-        }
+        public int ExpiryMonth { get; set; }
 
-        public int ExpiryMonth
-        {
-            get => _expirymonth;
-            set => _expirymonth = value;
-        }
+        public int ExpiryYear { get; set; }
 
-        public int ExpiryYear
-        {
-            get => _expiryyear;
-            set => _expiryyear = value;
-        }
-
-        public string SecurityNumber
-        {
-            get => _securityNumber;
-            set => _securityNumber = value;
-        }
+        public string SecurityNumber { get; set; }
 
         public PaymentDetails(string cardNumber, string cardName,string expiryDate, string securityNumber)
         {
-            _cardNumber = cardNumber;
-            _cardName = cardName;
-            _expiryDate = expiryDate;
-            _securityNumber = securityNumber;
+            CardNumber = cardNumber;
+            CardName = cardName;
+            ExpiryDate = expiryDate;
+            SecurityNumber = securityNumber;
             
         }
 
         public bool Startswith(string tocheck)
         {
             var numbers = new []{"300", "301", "302", "303", "304", "305"};
+
+            string num = String.Join('', numbers);
             return !string.IsNullOrEmpty(tocheck) && numbers.Any(number => tocheck.StartsWith(number));
         }
 
