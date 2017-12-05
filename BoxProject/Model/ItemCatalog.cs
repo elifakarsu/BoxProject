@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BoxProject.Model
 {
-    class ItemCatalog
+   public class ItemCatalog
     {
         //private Item _item;
         private ObservableCollection<Item> _myItems;
