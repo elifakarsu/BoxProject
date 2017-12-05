@@ -98,6 +98,7 @@
     <Compile Include="Model\Box.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\FrameNavigate.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemCatalog.cs" />
     <Compile Include="Model\PaymentDetails.cs" />
