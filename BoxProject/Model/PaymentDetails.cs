@@ -70,27 +70,27 @@ namespace BoxProject.Model
             return !string.IsNullOrEmpty(tocheck) && numbers.Any(number => tocheck.StartsWith(number));
         }
 
-        public PaymentDetails()
-        {
-            if (CardNumber.StartsWith ("300" , "301" , "302" , "303" , "304" , "305"))
-            {
-                MsgBox("Your payment will be done with Diners Club - Carte Blanche");
-            }
+        //public PaymentDetails()
+        //{
+        //    if (CardNumber.StartsWith ("300" , "301" , "302" , "303" , "304" , "305"))
+        //    {
+        //        //MsgBox("Your payment will be done with Diners Club - Carte Blanche");
+        //    }
 
-            if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
-            {
-                MsgBox("Payment Accepted");
-            }
+        //    if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
+        //    {
+        //        //MsgBox("Payment Accepted");
+        //    }
 
 
             
-            int currentmonth = DateTime.Now.Month;
-            int currentyear = DateTime.Now.Year;
-            if (currentmonth > ExpiryMonth && ExpiryYear > currentyear)
-            {
-                MsgBox("Sorry. Card is invalid");
-            }
-        }
+        //    int currentmonth = DateTime.Now.Month;
+        //    int currentyear = DateTime.Now.Year;
+        //    if (currentmonth > ExpiryMonth && ExpiryYear > currentyear)
+        //    {
+        //        MsgBox("Sorry. Card is invalid");
+        //    }
+        //}
 
     }
 }
