@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Globalization.DateTimeFormatting;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
 
@@ -24,6 +25,8 @@ namespace BoxProject.Model
 
         public string SecurityNumber { get; set; }
 
+       
+
         public PaymentDetails(string cardNumber, string cardName,string expiryDate, string securityNumber)
         {
             CardNumber = cardNumber;
@@ -32,26 +35,47 @@ namespace BoxProject.Model
             SecurityNumber = securityNumber;
             
         }
+        
 
-        public bool Startswith(string tocheck)
+        public async void PaymentDetailCard()
         {
-            var numbers = new []{"300", "301", "302", "303", "304", "305"};
+          
+                if (CardNumber == "300" || CardNumber == "301" || CardNumber == "302" || CardNumber == "303" || CardNumber == "304" || CardNumber == "305")
+                {
+                   ShowDialogBox("Diners Club - Carte Blanche");
+                }
+                else if (CardNumber == "34" || CardNumber == "37")
+                {
+                    ShowDialogBox("American Express");
+                }
+                else if (CardNumber == "36")
+                {
+                    ShowDialogBox("Diners Club - International");
+                }
+                else if (CardNumber == "54")
+                {
+                    ShowDialogBox("Diners Club - USA & Canada");
+                }
+                else if (CardNumber == "6011" || CardNumber == "  " || CardNumber == "644" || CardNumber == "645" || CardNumber == "646" || CardNumber == "647" || CardNumber == "648" || CardNumber == "649" || CardNumber == "65")
+                {
+                    ShowDialogBox("Discover");
+                }
+                else if (CardNumber == "637" || CardNumber == "638" || CardNumber == "639")
+                {
+                    ShowDialogBox("InstaPayment");
+                }
+                else if ()
+                {
+                    ShowDialogBox("JCB");
+                }
+            
 
-            string num = String.Join('', numbers);
-            return !string.IsNullOrEmpty(tocheck) && numbers.Any(number => tocheck.StartsWith(number));
-        }
 
-        public PaymentDetails()
-        {
-            if (CardNumber.StartsWith ("300" , "301" , "302" , "303" , "304" , "305"))
-            {
-                MsgBox("Your payment will be done with Diners Club - Carte Blanche");
-            }
-
-            if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
-            {
-                MsgBox("Payment Accepted");
-            }
+           
+           //if ((SecurityNumber.Length > 3 && SecurityNumber.Length < 4) && (CardNumber.Length == 13 || CardNumber.Length < 14 && CardNumber.Length > 17 || CardNumber.Length == 19))
+           // {
+           //     MsgBox("Payment Accepted");
+           // }
 
 
             
@@ -61,6 +85,12 @@ namespace BoxProject.Model
             {
                 MsgBox("Sorry. Card is invalid");
             }
+        }
+
+        public static  async  void ShowDialogBox(string message)
+        {
+            var msg = new MessageDialog(message);
+            await msg.ShowAsync();
         }
 
     }
