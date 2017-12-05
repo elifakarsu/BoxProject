@@ -104,8 +104,7 @@
     <Compile Include="Model\PaymentDetails.cs" />
     <Compile Include="Model\Serialization.cs" />
     <Compile Include="Model\Singleton.cs" />
-    <Compile Include="ViewModel\BoxVm.cs" />
-    <Compile Include="ViewModel\MainPageVm.cs" />
+    <Compile Include="ViewModel\BoxVM.cs" />
     <Compile Include="ViewModel\NotifyChangePropertyClass.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\BoxPage.xaml.cs">
@@ -142,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PaymentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
