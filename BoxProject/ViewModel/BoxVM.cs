@@ -9,34 +9,22 @@ using BoxProject.Model;
 
 namespace BoxProject.ViewModel
 {
-    class BoxVM
+    class BoxVm
     {
         public ItemCatalog _myItems { get; set; }
         private Serialization _Serialize;
         private Box _affordableBox;
         private Box _averageBox;
         private Box _expensiveBox;
-        private ObservableCollection<Category> _categories;
+      
         private ObservableCollection<Item> _myItemCollection;
         private ObservableCollection<Item> _itemsForMyBox;
-        private Category _selectedCategory;
+       
 
         Random rnd = new Random();
         int position = 0;
         Item myItem = new Item();
-
-        public ObservableCollection<Category> Categories
-        {
-            get => _categories;
-            set => _categories = value;
-        }
-
-        public Category SelectedCategory
-        {
-            get => _selectedCategory;
-            set =>  _selectedCategory = value;
-        }
-
+        
         public ObservableCollection<Item> MyItemCollection
         {
             get => _myItemCollection;
@@ -67,7 +55,7 @@ namespace BoxProject.ViewModel
         //    set => _expensiveBox = value;
         //}
 
-        public BoxVM()
+        public BoxVm()
         {
             _affordableBox = new Box();
 
@@ -79,22 +67,15 @@ namespace BoxProject.ViewModel
 
             _Serialize = new Serialization();
             
-            SelectedCategory = new Category();
+            
 
             ItemsForMyBox = new ObservableCollection<Item>();
 
-            Categories = new ObservableCollection<Category>()
-            {
-                new Category("Make up"),
-                new Category("Health"),
-                new Category("Era"),
-                new Category("Game")
-
-            };
+        
 
             ReadMyItems();
 
-            ChooseItemsForCategory();
+            //ChooseItemsForCategory();
 
             CreateAffordableBox();
 
@@ -110,15 +91,15 @@ namespace BoxProject.ViewModel
             _myItems.MyItems = MyItemCollection;
         }
 
-        public void ChooseItemsForCategory()
-        {
-            foreach (var item in MyItemCollection)
-            {
-                if (SelectedCategory.Name == item.Category )
-                ItemsForMyBox.Add(item);
-            }
-        }
-        
+        //public void ChooseItemsForCategory()
+        //{
+        //    foreach (var item in MyItemCollection)
+        //    {
+        //        if (SelectedCategory.Name == item.Category)
+        //            ItemsForMyBox.Add(item);
+        //    }
+        //}
+
         public void CreateAffordableBox()
         {
             ObservableCollection<Item> affordableItems = new ObservableCollection<Item>();
@@ -128,7 +109,7 @@ namespace BoxProject.ViewModel
                 if (item.Affordable == true)
                 {
                     affordableItems.Add(item);
-                    
+
                 }
             }
 
@@ -166,7 +147,7 @@ namespace BoxProject.ViewModel
 
             foreach (var item in ItemsForMyBox)
             {
-                if (item.Average == true)
+                if (item.Expensive == true)
                 {
                     expensiveItems.Add(item);
                 }
