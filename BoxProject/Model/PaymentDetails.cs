@@ -103,11 +103,5 @@ namespace BoxProject.Model
             }
         }
 
-        public static  async  void ShowDialogBox(string message)
-        {
-            var msg = new MessageDialog(message);
-            await msg.ShowAsync();
-        }
-
     }
 }
