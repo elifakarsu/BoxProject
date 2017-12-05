@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace BoxProject.Model
         private string _name;
         private string _description;
         private double _price;
+        private ObservableCollection<Item> _itemsInMyBox;
 
         public string Image
         {
@@ -37,7 +39,12 @@ namespace BoxProject.Model
             get => _price;
             set => _price = value;
         }
-        
+
+        public ObservableCollection<Item> ItemsInMyBox
+        {
+            get => _itemsInMyBox;
+            set => _itemsInMyBox = value;
+        }
 
         public Box(string image, string name, string description, double price)
         {
