@@ -8,7 +8,7 @@ using BoxProject.Model;
 
 namespace BoxProject.ViewModel
 {
-    class CustomerCollection
+    class CustomerCollection : NotifyChangePropertyClass
     {
         private readonly FrameNavigate _frameNavigate;
         // source property : for selected item

@@ -101,9 +101,11 @@
     <Compile Include="Model\FrameNavigate.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemCatalog.cs" />
+    <Compile Include="Model\Order.cs" />
     <Compile Include="Model\PaymentDetails.cs" />
     <Compile Include="Model\Serialization.cs" />
     <Compile Include="Model\Singleton.cs" />
+    <Compile Include="Model\SingletonOrder.cs" />
     <Compile Include="ViewModel\BoxVM.cs" />
     <Compile Include="ViewModel\MainPageVm.cs" />
     <Compile Include="ViewModel\NotifyChangePropertyClass.cs" />
@@ -138,6 +140,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\BoxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
