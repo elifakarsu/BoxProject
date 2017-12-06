@@ -16,9 +16,10 @@ namespace BoxProject.ViewModel
         private Box _affordableBox;
         private Box _averageBox;
         private Box _expensiveBox;
-      
+        private MainPageVm _mainPageVm;
         private ObservableCollection<Item> _myItemCollection;
         private ObservableCollection<Item> _itemsForMyBox;
+        private Category 
        
 
         Random rnd = new Random();
@@ -36,6 +37,8 @@ namespace BoxProject.ViewModel
             get => _itemsForMyBox;
             set => _itemsForMyBox = value;
         }
+
+        internal MainPageVm MainPageVm { get => _mainPageVm; set => _mainPageVm = value; }
 
         //public Box AffordableBox
         //{

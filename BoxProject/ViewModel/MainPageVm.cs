@@ -40,6 +40,5 @@ namespace BoxProject.ViewModel
             };
         }
 
-
     }
 }
