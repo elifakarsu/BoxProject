@@ -13,7 +13,7 @@ namespace BoxProject.Model
         private string _city;
         private string _address;
         private string _phoneNumber;
-        private string _eMail;
+        private string _email;
         private PaymentDetails _paymentDetails;
 
         public string Name
@@ -46,10 +46,10 @@ namespace BoxProject.Model
             set => _phoneNumber = value;
         }
 
-        public string EMail
+        public string Email
         {
-            get => _eMail;
-            set => _eMail = value;
+            get => _email;
+            set => _email = value;
         }
 
         public PaymentDetails PaymentDetails
@@ -59,20 +59,15 @@ namespace BoxProject.Model
         }
         
 
-        public Customer(string name,string country, string city, string address,string phoneNumber, string eMail, PaymentDetails paymentDetails)
+        public Customer(string name,string country, string city, string address,string phoneNumber, string email, PaymentDetails paymentDetails)
         {
             _name = name;
             _country = country;
             _city = city;
             _address = address;
             _phoneNumber = phoneNumber;
-            _eMail = eMail;
+            _email = email;
             _paymentDetails = paymentDetails;
-        }
-
-        public Customer()
-        {
-            
         }
 
 
