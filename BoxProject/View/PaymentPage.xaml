@@ -1,10 +1,11 @@
 ﻿<Page
-    x:Class="BoxProject.PaymentPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BoxProject"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:BoxProject.ViewModel"
+    x:Class="BoxProject.PaymentPage"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -24,13 +25,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.DataContext>
+            <ViewModel:PaymentVM/>
+        </Grid.DataContext>
+
         <TextBlock Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2" Text="Payment Page" FontSize="100" FontFamily="MS Office Symbol Bold" HorizontalAlignment="Center" VerticalAlignment="Center"  />
         <TextBlock  Grid.Row="1" Grid.Column="1"  Text="Card Name" FontSize="48" FontFamily="MS Office Symbol Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock  Grid.Row="2" Grid.Column="1"  Text="Card Number" FontSize="48" FontFamily="MS Office Symbol Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock  Grid.Row="3" Grid.Column="1"  Text="Expiry Date" FontSize="48" FontFamily="MS Office Symbol Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock  Grid.Row="4" Grid.Column="1"  Text="CCV Code" FontSize="48" FontFamily="MS Office Symbol Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox  Grid.Row="1" Grid.Column="2"  Text="" FontSize="48" FontFamily="MS Office Symbol Bold" />
-        <TextBox  Grid.Row="2" Grid.Column="2"  Text="" FontSize="48" FontFamily="MS Office Symbol Bold" />
+        <TextBox  Grid.Row="1" Grid.Column="2"  Text="{Binding CardName, Mode=TwoWay}" FontSize="48" FontFamily="MS Office Symbol Bold" />
+        <TextBox  Grid.Row="2" Grid.Column="2"  Text="{Binding CardNumber, Mode=TwoWay}" FontSize="48" FontFamily="MS Office Symbol Bold" />
         <TextBox  Grid.Row="3" Grid.Column="2"  Text="" FontSize="38" FontFamily="MS Office Symbol Bold" Margin="0,0,163,0" />
         <TextBox  Grid.Row="3" Grid.Column="2"  Text="" FontSize="48" FontFamily="MS Office Symbol Bold" Margin="162,0,0,0" />
         <TextBox  Grid.Row="4" Grid.Column="2"  Text="" FontSize="48" FontFamily="MS Office Symbol Bold" />

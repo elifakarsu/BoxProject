@@ -19,7 +19,7 @@ namespace BoxProject.ViewModel
         private MainPageVm _mainPageVm;
         private ObservableCollection<Item> _myItemCollection;
         private ObservableCollection<Item> _itemsForMyBox;
-        private Category 
+       // private Category;
        
 
         Random rnd = new Random();

@@ -106,9 +106,11 @@
     <Compile Include="Model\Serialization.cs" />
     <Compile Include="Model\Singleton.cs" />
     <Compile Include="Model\SingletonOrder.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\BoxVM.cs" />
     <Compile Include="ViewModel\MainPageVm.cs" />
     <Compile Include="ViewModel\NotifyChangePropertyClass.cs" />
+    <Compile Include="ViewModel\PaymentVM.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\BoxPage.xaml.cs">
       <DependentUpon>BoxPage.xaml</DependentUpon>

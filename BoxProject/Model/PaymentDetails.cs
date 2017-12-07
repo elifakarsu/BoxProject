@@ -17,7 +17,7 @@ namespace BoxProject.Model
 
         public string CardName { get; set; }
 
-        public string ExpiryDate { get; set; }
+        //public string ExpiryDate { get; set; }
 
         public int ExpiryMonth { get; set; }
 
@@ -31,7 +31,7 @@ namespace BoxProject.Model
         {
             CardNumber = cardNumber;
             CardName = cardName;
-            ExpiryDate = expiryDate;
+            //ExpiryDate = expiryDate;
             SecurityNumber = securityNumber;
 
         }
